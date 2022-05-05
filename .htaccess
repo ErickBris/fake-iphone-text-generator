@@ -1,0 +1,11 @@
+Options -Indexes
+RewriteEngine On
+
+<Files .htaccess>
+ order allow,deny
+ deny from all
+</Files>
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /redirect.php?$1 [L]
